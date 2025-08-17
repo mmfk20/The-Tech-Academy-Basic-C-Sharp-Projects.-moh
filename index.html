@@ -64,17 +64,11 @@
       margin-top: 25px;
       padding: 15px;
       border-radius: 10px;
+      background-color: #e9f5ff;
+      color: #0a3d62;
       font-weight: bold;
       font-size: 1.2em;
       white-space: pre-line;
-    }
-    #result.success {
-      background-color: #e9f5ff;
-      color: #0a3d62;
-    }
-    #result.error {
-      background-color: #ffe5e5;
-      color: #c0392b;
     }
     footer {
       text-align: center;
@@ -116,4 +110,30 @@
   <script>
     function calculateShipping() {
       const weight = parseFloat(document.getElementById('weight').value);
-      const width = parseFloat(document.getElementByI
+      const width = parseFloat(document.getElementById('width').value);
+      const height = parseFloat(document.getElementById('height').value);
+      const length = parseFloat(document.getElementById('length').value);
+      const result = document.getElementById('result');
+
+      if (isNaN(weight) || isNaN(width) || isNaN(height) || isNaN(length)) {
+        result.innerText = "Please enter valid numbers for all fields.";
+        return;
+      }
+
+      if (weight > 50) {
+        result.innerText = "Package too heavy to be shipped via Package Express. Have a good day.";
+        return;
+      }
+
+      if ((width + height + length) > 50) {
+        result.innerText = "Package too big to be shipped via Package Express.";
+        return;
+      }
+
+      const quote = (weight * width * height * length) / 100;
+      result.innerText = `Your estimated total for shipping this package is: $${quote.toFixed(2)}\nThank you!`;
+    }
+  </script>
+
+</body>
+</html>

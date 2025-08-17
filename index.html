@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Package Express - C# Console App</title>
+  <title>Package Express - C# Calculator</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -58,42 +58,36 @@
 <body>
   <header>
     <h1>📦 Package Express</h1>
-    <p>A simple C# console application for calculating shipping quotes</p>
+    <p>A simple C# console application calculator for shipping quotes</p>
   </header>
 
   <main>
     <h2>About the Project</h2>
     <p>
-      This C# console application prompts the user for a package's weight and dimensions, 
-      checks if the package is eligible for shipping, and calculates the shipping cost.
+      This C# console application calculates shipping quotes based on package weight and dimensions.
+      It performs validation checks and outputs the estimated shipping cost.
     </p>
 
     <h2>Features</h2>
     <ul>
       <li>Rejects packages heavier than 50 lbs</li>
       <li>Rejects packages whose dimensions (width + height + length) exceed 50</li>
-      <li>Calculates shipping quote using the formula: <code>(width × height × length × weight) ÷ 100</code></li>
+      <li>Calculates shipping quote: <code>(width × height × length × weight) ÷ 100</code></li>
       <li>Displays the result formatted as a dollar amount</li>
     </ul>
 
     <h2>Example Run</h2>
     <pre>
 Welcome to Package Express. Please follow the instructions below.
-Please enter the package weight:
-40
-Please enter the package width:
-10
-Please enter the package height:
-12
-Please enter the package length:
-11
+Package weight: 40
+Package dimensions (W x H x L): 10 x 12 x 11
 Your estimated total for shipping this package is: $528.00
 Thank you!
     </pre>
 
     <h2>Run the Program Online</h2>
-    <p>You can run the Package Express C# console application online using .NET Fiddle:</p>
-    <a href="https://dotnetfiddle.net/MVxBE8" class="button" target="_blank">Click here to run the program</a>
+    <p>You can run the Package Express C# calculator online using .NET Fiddle:</p>
+    <a href="https://dotnetfiddle.net/MVxBE8" target="_blank" class="button">Click here to run the program</a>
   </main>
 
   <footer>

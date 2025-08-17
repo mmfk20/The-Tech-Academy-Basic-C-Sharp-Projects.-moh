@@ -1,98 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Package Express - C# Calculator</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background-color: #4a90e2;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    main {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      color: #4a90e2;
-    }
-    pre {
-      background-color: #eee;
-      padding: 10px;
-      border-radius: 5px;
-      overflow-x: auto;
-    }
-    a.button {
-      display: inline-block;
-      padding: 10px 15px;
-      background-color: #4a90e2;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    a.button:hover {
-      background-color: #357ABD;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #eee;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>📦 Package Express</h1>
-    <p>A simple C# console application calculator for shipping quotes</p>
-  </header>
+<input type="number" id="weight" placeholder="Weight">
+<input type="number" id="width" placeholder="Width">
+<input type="number" id="height" placeholder="Height">
+<input type="number" id="length" placeholder="Length">
+<button onclick="calculate()">Calculate Shipping</button>
+<p id="result"></p>
 
-  <main>
-    <h2>About the Project</h2>
-    <p>
-      This C# console application calculates shipping quotes based on package weight and dimensions.
-      It performs validation checks and outputs the estimated shipping cost.
-    </p>
+<script>
+function calculate() {
+    let weight = parseFloat(document.getElementById('weight').value);
+    let width = parseFloat(document.getElementById('width').value);
+    let height = parseFloat(document.getElementById('height').value);
+    let length = parseFloat(document.getElementById('length').value);
 
-    <h2>Features</h2>
-    <ul>
-      <li>Rejects packages heavier than 50 lbs</li>
-      <li>Rejects packages whose dimensions (width + height + length) exceed 50</li>
-      <li>Calculates shipping quote: <code>(width × height × length × weight) ÷ 100</code></li>
-      <li>Displays the result formatted as a dollar amount</li>
-    </ul>
+    if(weight > 50) {
+        document.getElementById('result').innerText = "Package too heavy to be shipped.";
+        return;
+    }
+    if(width + height + length > 50) {
+        document.getElementById('result').innerText = "Package too big to be shipped.";
+        return;
+    }
 
-    <h2>Example Run</h2>
-    <pre>
-Welcome to Package Express. Please follow the instructions below.
-Package weight: 40
-Package dimensions (W x H x L): 10 x 12 x 11
-Your estimated total for shipping this package is: $528.00
-Thank you!
-    </pre>
-
-    <h2>Run the Program Online</h2>
-    <p>You can run the Package Express C# calculator online using .NET Fiddle:</p>
-    <a href="https://dotnetfiddle.net/MVxBE8" target="_blank" class="button">Click here to run the program</a>
-  </main>
-
-  <footer>
-    <p>Created for The Tech Academy - Basic C# Projects</p>
-    <p>✨ Author: OMAR</p>
-  </footer>
-</body>
-</html>
+    let quote = (weight * width * height * length) / 100;
+    document.getElementById('result').innerText = "Shipping Quote: $" + quote.toFixed(2);
+}
+</script>

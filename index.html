@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Package Express - C# Console Application</title>
+  <title>Package Express - C# Console App</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f9;
-      color: #333;
+      background-color: #f4f4f9;
       margin: 0;
       padding: 0;
+      color: #333;
     }
     header {
-      background: #4a90e2;
+      background-color: #4a90e2;
       color: white;
       padding: 20px;
       text-align: center;
@@ -22,25 +22,36 @@
       max-width: 800px;
       margin: 30px auto;
       padding: 20px;
-      background: white;
+      background-color: white;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     h1, h2 {
       color: #4a90e2;
     }
-    code, pre {
-      background: #eee;
+    pre {
+      background-color: #eee;
       padding: 10px;
       border-radius: 5px;
-      display: block;
-      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+    a.button {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #4a90e2;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    a.button:hover {
+      background-color: #357ABD;
     }
     footer {
       text-align: center;
       padding: 20px;
+      background-color: #eee;
       margin-top: 40px;
-      background: #eee;
     }
   </style>
 </head>
@@ -53,16 +64,16 @@
   <main>
     <h2>About the Project</h2>
     <p>
-      This console application asks the user for a package's weight and dimensions, then calculates a shipping quote
-      based on the rules provided in the assignment.
+      This C# console application prompts the user for a package's weight and dimensions, 
+      checks if the package is eligible for shipping, and calculates the shipping cost.
     </p>
 
     <h2>Features</h2>
     <ul>
-      <li>Rejects packages heavier than <b>50 lbs</b>.</li>
-      <li>Rejects packages whose dimensions (width + height + length) exceed <b>50</b>.</li>
-      <li>Calculates a shipping quote using the formula: <code>(width × height × length × weight) ÷ 100</code>.</li>
-      <li>Displays the result formatted as a dollar amount.</li>
+      <li>Rejects packages heavier than 50 lbs</li>
+      <li>Rejects packages whose dimensions (width + height + length) exceed 50</li>
+      <li>Calculates shipping quote using the formula: <code>(width × height × length × weight) ÷ 100</code></li>
+      <li>Displays the result formatted as a dollar amount</li>
     </ul>
 
     <h2>Example Run</h2>
@@ -80,14 +91,14 @@ Your estimated total for shipping this package is: $528.00
 Thank you!
     </pre>
 
-    <h2>Source Code</h2>
-    <p>You can view the full source code on GitHub:</p>
-    <p><a href="Program.cs" target="_blank">View Program.cs</a></p>
+    <h2>Run the Program Online</h2>
+    <p>You can run the Package Express C# console application online using .NET Fiddle:</p>
+    <a href="https://dotnetfiddle.net/MVxBE8" class="button" target="_blank">Click here to run the program</a>
   </main>
 
   <footer>
     <p>Created for The Tech Academy - Basic C# Projects</p>
-    <p>✨ Author: <b>Your Name</b></p>
+    <p>✨ Author: OMAR</p>
   </footer>
 </body>
 </html>

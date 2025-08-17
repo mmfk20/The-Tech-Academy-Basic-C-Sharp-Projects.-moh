@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Package Express - C# Console Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #4a90e2;
+    }
+    code, pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      display: block;
+      white-space: pre-wrap;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📦 Package Express</h1>
+    <p>A simple C# console application for calculating shipping quotes</p>
+  </header>
+
+  <main>
+    <h2>About the Project</h2>
+    <p>
+      This console application asks the user for a package's weight and dimensions, then calculates a shipping quote
+      based on the rules provided in the assignment.
+    </p>
+
+    <h2>Features</h2>
+    <ul>
+      <li>Rejects packages heavier than <b>50 lbs</b>.</li>
+      <li>Rejects packages whose dimensions (width + height + length) exceed <b>50</b>.</li>
+      <li>Calculates a shipping quote using the formula: <code>(width × height × length × weight) ÷ 100</code>.</li>
+      <li>Displays the result formatted as a dollar amount.</li>
+    </ul>
+
+    <h2>Example Run</h2>
+    <pre>
+Welcome to Package Express. Please follow the instructions below.
+Please enter the package weight:
+40
+Please enter the package width:
+10
+Please enter the package height:
+12
+Please enter the package length:
+11
+Your estimated total for shipping this package is: $528.00
+Thank you!
+    </pre>
+
+    <h2>Source Code</h2>
+    <p>You can view the full source code on GitHub:</p>
+    <p><a href="Program.cs" target="_blank">View Program.cs</a></p>
+  </main>
+
+  <footer>
+    <p>Created for The Tech Academy - Basic C# Projects</p>
+    <p>✨ Author: <b>Your Name</b></p>
+  </footer>
+</body>
+</html>

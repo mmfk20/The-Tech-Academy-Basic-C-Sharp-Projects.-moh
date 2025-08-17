@@ -1,27 +1,109 @@
-<input type="number" id="weight" placeholder="Weight">
-<input type="number" id="width" placeholder="Width">
-<input type="number" id="height" placeholder="Height">
-<input type="number" id="length" placeholder="Length">
-<button onclick="calculate()">Calculate Shipping</button>
-<p id="result"></p>
-
-<script>
-function calculate() {
-    let weight = parseFloat(document.getElementById('weight').value);
-    let width = parseFloat(document.getElementById('width').value);
-    let height = parseFloat(document.getElementById('height').value);
-    let length = parseFloat(document.getElementById('length').value);
-
-    if(weight > 50) {
-        document.getElementById('result').innerText = "Package too heavy to be shipped.";
-        return;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Package Express Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
-    if(width + height + length > 50) {
-        document.getElementById('result').innerText = "Package too big to be shipped.";
-        return;
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
+    main {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #4a90e2;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #357ABD;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
 
-    let quote = (weight * width * height * length) / 100;
-    document.getElementById('result').innerText = "Shipping Quote: $" + quote.toFixed(2);
-}
-</script>
+  <header>
+    <h1>Welcome to Package Express. Please follow the instructions below.</h1>
+  </header>
+
+  <main>
+    <label for="weight">Package Weight (lbs):</label>
+    <input type="number" id="weight" placeholder="Enter weight" min="0">
+
+    <label for="width">Package Width (inches):</label>
+    <input type="number" id="width" placeholder="Enter width" min="0">
+
+    <label for="height">Package Height (inches):</label>
+    <input type="number" id="height" placeholder="Enter height" min="0">
+
+    <label for="length">Package Length (inches):</label>
+    <input type="number" id="length" placeholder="Enter length" min="0">
+
+    <button onclick="calculateShipping()">Calculate Shipping Quote</button>
+
+    <p id="result"></p>
+  </main>
+
+  <script>
+    function calculateShipping() {
+      const weight = parseFloat(document.getElementById('weight').value);
+      const width = parseFloat(document.getElementById('width').value);
+      const height = parseFloat(document.getElementById('height').value);
+      const length = parseFloat(document.getElementById('length').value);
+      const result = document.getElementById('result');
+
+      // Validate inputs
+      if (isNaN(weight) || isNaN(width) || isNaN(height) || isNaN(length)) {
+        result.innerText = "Please enter valid numbers for all fields.";
+        return;
+      }
+
+      if (weight > 50) {
+        result.innerText = "Package too heavy to be shipped via Package Express. Have a good day.";
+        return;
+      }
+
+      if ((width + height + length) > 50) {
+        result.innerText = "Package too big to be shipped via Package Express.";
+        return;
+      }
+
+      // Calculate shipping q

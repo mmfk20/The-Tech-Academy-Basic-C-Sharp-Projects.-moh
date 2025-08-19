@@ -33,5 +33,5 @@ This is a simple C# console application that calculates a shipping quote for pac
 
 ---
 
-✨ **Author:** *Your Name Here*  
+✨ **Author:** *Moh*  
 📖 **Assignment:** Package Express (C# Console Application)  
